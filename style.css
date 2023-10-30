@@ -1,0 +1,174 @@
+
+/* CSS DESIGN USING MOBILE-FIRST APPROACH */
+
+:root {
+    /* FONTS */
+    --FF:'Barlow Semi Condensed', sans-serif;
+    --FS: 1.2rem;
+
+    /* COLORS */
+    --VOILET: hsl(263, 55%, 52%);
+    --GRAYISH-BLUE: hsl(217, 19%, 35%);
+    --BLACKISH-BLUE: hsl(219, 29%, 14%);
+    --WHITE: hsl(0, 0%, 100%);
+    --LIGHT-GRAY: hsl(0, 0%, 81%);
+    --LIGHT-BLUE: hsl(210, 46%, 95%); 
+}
+
+
+ /* || RESET */
+ *,
+ *::after,
+ *::before {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ /* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+  }
+
+  /* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+    min-height: 10em;
+  }
+
+  /* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+ /* || GENERAL STYLES */
+ html {
+    -moz-text-size-adjust: none;
+     -webkit-text-size-adjust: none;
+     text-size-adjust: none;
+     scroll-behavior: smooth;
+      overflow: scroll;
+  }
+
+  body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    font-family: var(--FF);
+    font-size: var(--FS); 
+    background-color: var(--LIGHT-BLUE);
+  }
+/* Typography */
+.graduate__text{
+  margin-left: 1.5em;
+}
+.card__text{
+  margin-bottom: 0.5em;
+}
+.verified__text{
+  opacity: 50%;
+}
+.review__text{
+  opacity: 70%;
+}
+/* main contents design */
+  .container{
+    max-width: 375px;
+    margin: 3em auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1.5em;
+   
+  }
+  .flex{
+    display: flex;
+    margin-bottom: 1em;
+  }
+.student__img{
+  border-radius: 50%;
+}
+.card1{
+  background-color: var(--VOILET);
+  border-radius: 1em;
+  padding: 1em 1em;
+  color: var(--LIGHT-GRAY);
+  background-image: url(images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: top 15px left 250px;
+}
+.card2{
+  background-color: var(--GRAYISH-BLUE);
+  border-radius: 1em;
+  padding: 1em 1em;
+  color: var(--LIGHT-GRAY);
+}
+.card3{
+  background-color: var(--WHITE);
+  border-radius: 1em;
+  padding: 1em 1em;
+  color: var(--GRAYISH-BLUE);
+}
+.card4{
+  background-color: var(--WHITE);
+  border-radius: 1em;
+  padding: 1em 1em;
+  color: var(--GRAYISH-BLUE);
+}
+.card5{
+  background-color: var(--BLACKISH-BLUE);
+  border-radius: 1em;
+  padding: 1em 1em;
+  color: var(--LIGHT-BLUE);
+}
+
+
+.attribution {
+    font-size: 11px;
+     text-align: center; 
+}
+.attribution a{
+    color: hsl(228, 45%, 44%);
+}
+
+/* DESKTOP DESIGN */
+@media(min-width:800px){
+
+.container{
+  max-width: 1440px;
+  margin: 10em 5em;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  font-size: 1rem;
+}
+.card1{
+  grid-column: span 2;
+  background-position: top 15px left 450px; 
+}
+.card3{
+  grid-row: span 2;
+}
+.card5{
+  grid-column: span 2;
+}
+
+}
